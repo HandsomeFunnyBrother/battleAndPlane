@@ -118,7 +118,6 @@ public class Game implements Scenes {
 
     // 管理场景所有的飞机、子弹、道具移动
     void move() {
-
         if (player != null) {
             // 这里这个坐标，是为了让敌人发射子弹时定位用的
             Data.x = player.x;
@@ -185,7 +184,7 @@ public class Game implements Scenes {
                 }
                 Load.playSound("死亡");
                 // 击杀一个敌人增加 1 分，不整这么多花里胡哨的
-                fraction += 1;
+                fraction += 10;
                 if (fraction / 100 == checkpoint) {
                     boss = new Boss2();
                     checkpoint += 1;
@@ -309,9 +308,9 @@ public class Game implements Scenes {
 
     // 管理场景所有的子弹的发射
     void attack() {
-        // 我方飞机5帧发射一次
+        // 我方飞机3帧发射一次
         if (player != null && player.hp > 0) {
-            if (!player.isRemove() && fps % 5 == 0)
+            if (!player.isRemove() && fps % 3 == 0)
                 bulletPlayer.addAll(Arrays.asList(player.attack()));
         }
         // 敌方飞机发射子弹
@@ -332,7 +331,7 @@ public class Game implements Scenes {
         Random random = new Random();
         int rn = random.nextInt(100) + 1;
 
-        int[] hp = {(fps / 1000) + 2 * checkpoint, (fps / 1000) + 4 * checkpoint, (fps / 1000) + 10 * checkpoint, (fps / 1000) + 16 * checkpoint, (fps / 1000) + 22 * checkpoint};
+        int[] hp = {(fps / 2000) + 2 * checkpoint, (fps / 2000) + 4 * checkpoint, (fps / 2000) + 10 * checkpoint, (fps / 2000) + 16 * checkpoint, (fps / 2000) + 22 * checkpoint};
 
         switch (rn / 10) {
             case 1: {
