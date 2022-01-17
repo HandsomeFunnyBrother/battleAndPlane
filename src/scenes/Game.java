@@ -331,7 +331,7 @@ public class Game implements Scenes {
         Random random = new Random();
         int rn = random.nextInt(100) + 1;
 
-        int[] hp = {(fps / 2000) + 2 * checkpoint, (fps / 2000) + 4 * checkpoint, (fps / 2000) + 10 * checkpoint, (fps / 2000) + 16 * checkpoint, (fps / 2000) + 22 * checkpoint};
+        int[] hp = {(fps / 2000) + 1 * checkpoint, (fps / 2000) + 2 * checkpoint, (fps / 2000) + 5 * checkpoint, (fps / 2000) + 8 * checkpoint, (fps / 2000) + 11 * checkpoint};
 
         switch (rn / 10) {
             case 1: {
