@@ -10,6 +10,8 @@ git clone https://gitee.com/easecat_gitee/AircraftWars.git
 
 再次点击 `运行` -> `运行..` -> `新建配置` -> 选择 '应用程序' -> 主类选择 `main` 后运行即可<br>
 
+**如果运行失败，请检查是否存在乱码问题！！！**<br>
+
 **运行界面** <br>
 
 ![输入图片说明](.mkimg/%E4%B8%BB%E7%95%8C%E9%9D%A2.png)![输入图片说明](.mkimg/%E6%88%98%E6%96%97%E7%95%8C%E9%9D%A2.png)
