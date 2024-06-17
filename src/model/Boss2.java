@@ -26,6 +26,7 @@ public class Boss2 extends Aircraft {
     }
 
     // BOSS 的移动
+    @Override
     public void move() {
         Random random = new Random();
         // BOSS会在屏幕上方反复横跳，这里我将采用固定的一定方式
@@ -34,18 +35,27 @@ public class Boss2 extends Aircraft {
         // 根据飞机所在位置重新设定飞机应该移动的方向
 
         // 左边超出边界,则向右边走, 范围在 -9.5° ~ 9.5°
-        if (left) deg = random.nextInt(20) - 9.5;
+        if (left) {
+            deg = random.nextInt(20) - 9.5;
+        }
         // 右边超出边界,则向左边走, 范围在 171.5° ~ 189.5
-        if (right) deg = random.nextInt(20) - 9.5 + 180;
+        if (right) {
+            deg = random.nextInt(20) - 9.5 + 180;
+        }
         // 上边超出边界,则向下边走, 范围在 71.5° ~ 109.5°
-        if (up) deg = random.nextInt(40) - 19.5 + 90;
+        if (up) {
+            deg = random.nextInt(40) - 19.5 + 90;
+        }
         // 下边超出边界,则向上边走, 范围在 -281.5° ~ 259.5°
-        if (down) deg = random.nextInt(40) - 19.5 + 270;
+        if (down) {
+            deg = random.nextInt(40) - 19.5 + 270;
+        }
 
         super.move();
     }
 
     // BOSS 发射子弹
+    @Override
     public Bullet[] attack() {
 
         // 最低四秒发射一次子弹
@@ -53,7 +63,9 @@ public class Boss2 extends Aircraft {
             lastTime = lifeTime;
             int rn = new Random().nextInt(100);
             // 发射子弹时，有一定的几率不发射
-            if (rn < 20) return new Bullet[]{};
+            if (rn < 20) {
+                return new Bullet[]{};
+            }
 
             int bx = Data.WIDTH / 2;
             int by = x + height;

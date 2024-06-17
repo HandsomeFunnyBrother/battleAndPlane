@@ -25,23 +25,29 @@ public class Recording implements Scenes {
         buttonOk[2] = Load.image("确定-鼠标按下.png");
     }
 
+    @Override
     public void onKeyDown(int keyCode) {
 
     }
 
+    @Override
     public void onKeyUp(int keyCode) {
 
     }
 
+    @Override
     public void onMouse(int x, int y, int struts) {
         buttonOkStruts = 0;
 
         if(Rect.isInternal(x, y, 188, 600 + Data.TITLE_BOX_HEIGHT, 132, 42)) {
             buttonOkStruts = struts == Scenes.MOUSE_MOVED ? 1 : struts == Scenes.MOUSE_DOWN ? 2 : 0;
-            if(struts == Scenes.MOUSE_UP) Data.canvas.switchScenes("Home");
+            if(struts == Scenes.MOUSE_UP) {
+                Data.canvas.switchScenes("Home");
+            }
         }
     }
 
+    @Override
     public void draw(Graphics g) {
         // 绘制背景
         Data.background.show(g);
