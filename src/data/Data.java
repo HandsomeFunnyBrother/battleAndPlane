@@ -11,6 +11,7 @@ import java.applet.AudioClip;
 import java.awt.*;
 
 public class Data {
+    //funny
     // 窗口的宽度、高度,游戏的刷新速度
     public static final int WIDTH = 512, HEIGHT = 768, FPS = 50;
     // 显示游戏画面的面板
